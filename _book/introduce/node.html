@@ -1,0 +1,490 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>节点（node） · bbdChart</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Tommy">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="edge.html" />
+    
+    
+    <link rel="prev" href="baseUsage.html" />
+    
+
+    
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"kuangshp","repo":"mysql","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://fuzhihong1994.github.io" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    BBDchart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    演示/文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="baseUsage.html">
+            
+                <a href="baseUsage.html">
+            
+                    
+                    基本用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    节点（node）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="edge.html">
+            
+                <a href="edge.html">
+            
+                    
+                    边（edge）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="on.html">
+            
+                <a href="on.html">
+            
+                    
+                    事件（on）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="layout.html">
+            
+                <a href="layout.html">
+            
+                    
+                    布局（layout）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="filter.html">
+            
+                <a href="filter.html">
+            
+                    
+                    过滤器（filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="selection.html">
+            
+                <a href="selection.html">
+            
+                    
+                    选择（selection/brush）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    配置（config）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >节点（node）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x8282;&#x70B9;&#xFF08;node&#xFF09;"><b></b>&#x8282;&#x70B9;&#xFF08;node&#xFF09;</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x5C5E;&#x6027;"><b></b>&#x5C5E;&#x6027;</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x6CD5;"><b></b>&#x65B9;&#x6CD5;</a></li></ul></ul></ul></div><a href="#&#x8282;&#x70B9;&#xFF08;node&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8282;&#x70B9;&#xFF08;node&#xFF09;"><a name="&#x8282;&#x70B9;&#xFF08;node&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x8282;&#x70B9;&#xFF08;node&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8282;&#x70B9;&#xFF08;node&#xFF09;" class="plugin-anchor" href="#&#x8282;&#x70B9;&#xFF08;node&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8282;&#x70B9;&#xFF08;node&#xFF09;</h1>
+<iframe src="./examples/node.html" width="750px" height="300px" frameborder="0" scrolling="no"> </iframe>
+
+<h3 id="&#x5C5E;&#x6027;"><a name="&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5C5E;&#x6027;" class="plugin-anchor" href="#&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C5E;&#x6027;</h3>
+<h4 id="&#x683C;&#x5F0F;-&#x5C5E;&#x6027;&#x540D;-&#x5BF9;&#x5E94;&#x5B57;&#x8282;&#x793A;&#x4F8B;&#x6CE8;&#x91CA;"><a name="&#x683C;&#x5F0F;-&#x5C5E;&#x6027;&#x540D;-&#x5BF9;&#x5E94;&#x5B57;&#x8282;&#x793A;&#x4F8B;&#x6CE8;&#x91CA;" class="anchor-navigation-ex-anchor" href="#&#x683C;&#x5F0F;-&#x5C5E;&#x6027;&#x540D;-&#x5BF9;&#x5E94;&#x5B57;&#x8282;&#x793A;&#x4F8B;&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x683C;&#x5F0F;-&#x5C5E;&#x6027;&#x540D;-&#x5BF9;&#x5E94;&#x5B57;&#x8282;&#x793A;&#x4F8B;&#x6CE8;&#x91CA;" class="plugin-anchor" href="#&#x683C;&#x5F0F;-&#x5C5E;&#x6027;&#x540D;-&#x5BF9;&#x5E94;&#x5B57;&#x8282;&#x793A;&#x4F8B;&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x683C;&#x5F0F;: &#x5C5E;&#x6027;&#x540D; (&#x5BF9;&#x5E94;&#x5B57;&#x8282;){&#x793A;&#x4F8B;}(&#x6CE8;&#x91CA;)</h4>
+<ul>
+<li><p><strong>&#x8282;&#x70B9;&#x989C;&#x8272; (color){&quot;#aec7e8&quot;}</strong></p>
+</li>
+<li><p><strong>&#x5B57;&#x4F53;&#x989C;&#x8272; (fontColor){&quot;#132637&quot;}</strong></p>
+</li>
+<li><p><strong>&#x5B57;&#x4F53;&#x5927;&#x5C0F; (fontSize){12}</strong></p>
+</li>
+<li><p><strong>&#x5B57;&#x4F53;&#x56FE;&#x6807; (icon){&quot; &amp; # xe616; &quot;}(&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#x7684;unicode)</strong></p>
+</li>
+<li><p><strong>&#x8282;&#x70B9;id (id){&quot;48260c9987a6404b9cd2c4928910edae&quot;}</strong></p>
+</li>
+<li><p><strong>&#x8282;&#x70B9;label (label){&quot;&#x4E2D;&#x56FD;&#x539F;&#x5B50;&#x80FD;&#x5DE5;&#x4E1A;&#x6709;&#x9650;&#x516C;&#x53F8;&quot;}</strong></p>
+</li>
+<li><p><strong>&#x8282;&#x70B9;&#x5C5E;&#x6027; (properties){obj}</strong></p>
+</li>
+<li><p><strong>&#x8282;&#x70B9;&#x5C3A;&#x5BF8; (size){10}</strong></p>
+</li>
+<li><p><strong>x&#x5750;&#x6807; (x){60}</strong></p>
+</li>
+<li><p><strong>y&#x5750;&#x6807; (y){60}</strong></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>&#x9ED8;&#x8BA4;iconfont&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x8981;&#x4F7F;&#x7528;&#x5176;&#x5B83;&#x5B57;&#x4F53;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;config&#x4E2D;&#x7684;iconFamily&#x5B57;&#x6BB5;</strong></p>
+</blockquote>
+<h3 id="&#x65B9;&#x6CD5;"><a name="&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x65B9;&#x6CD5;" class="plugin-anchor" href="#&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;</h3>
+<blockquote>
+<p><strong>add(nodes, edges, cb)  &#x6DFB;&#x52A0;&#x8282;&#x70B9;&#x548C;&#x8FB9; </strong></p>
+</blockquote>
+<ul>
+<li><strong> nodes{object|Array}: nodes&#x6570;&#x636E; </strong></li>
+<li><strong> edges{object|Array}: edges&#x6570;&#x636E; </strong></li>
+<li><strong> cb{function(nodes){}}: &#x56DE;&#x8C03; </strong></li>
+</ul>
+<blockquote>
+<p><strong>remove()  &#x6E05;&#x9664;&#x6570;&#x636E; </strong></p>
+</blockquote>
+<ul>
+<li><strong> empty </strong></li>
+</ul>
+<blockquote>
+<p><strong>addNode(nodes, cb)  &#x6DFB;&#x52A0;&#x8282;&#x70B9; </strong></p>
+</blockquote>
+<ul>
+<li><strong> nodes{object|Array}: nodes&#x6570;&#x636E; </strong></li>
+<li><strong> cb{function(nodes){}}: &#x56DE;&#x8C03; </strong></li>
+</ul>
+<blockquote>
+<p><strong>removeNode(ids, cb)  &#x5220;&#x9664;&#x70B9; </strong></p>
+</blockquote>
+<ul>
+<li><strong> ids{string|Array}: id&#x6570;&#x7EC4; </strong></li>
+<li><strong> cb{function(nodes){}}: &#x56DE;&#x8C03; </strong></li>
+</ul>
+<blockquote>
+<p><strong>updateNode(ids, attr={}, cb)  &#x66F4;&#x65B0;&#x70B9; </strong></p>
+</blockquote>
+<ul>
+<li><strong> ids{string|Array}: id&#x6570;&#x7EC4; </strong></li>
+<li><strong> attr{obj}: &#x4FEE;&#x6539;&#x5C5E;&#x6027; </strong></li>
+<li><strong> cb{function(nodes){}}: &#x56DE;&#x8C03; </strong></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="baseUsage.html" class="navigation navigation-prev " aria-label="Previous page: 基本用法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="edge.html" class="navigation navigation-next " aria-label="Next page: 边（edge）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"节点（node）","level":"1.2.2","depth":2,"next":{"title":"边（edge）","level":"1.2.3","depth":2,"path":"introduce/edge.md","ref":"introduce/edge.md","articles":[]},"previous":{"title":"基本用法","level":"1.2.1","depth":2,"path":"introduce/baseUsage.md","ref":"introduce/baseUsage.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/fzh199410"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./images/donate.png","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"github-buttons":{"buttons":[{"user":"kuangshp","repo":"mysql","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Tommy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"bbdChart","language":"zh-hans","links":{"sidebar":{"我的博客":"https://fuzhihong1994.github.io"}},"gitbook":"3.2.3","description":"图谱框架"},"file":{"path":"introduce/node.md","mtime":"2019-02-19T09:31:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-19T10:12:11.796Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

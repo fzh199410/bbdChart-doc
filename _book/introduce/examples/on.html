@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on事件</title>
+    <style>
+        .box {
+            display: flex;
+            height: 300px;
+            width: 750px;
+        }
+        #map {
+            flex: 2.5;
+            position: relative;
+            box-sizing: border-box;
+            background: #ddd;
+        }
+        #console {
+            flex: 1;
+            background: #7e888b;
+            color: #fff;
+            overflow-y: scroll;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="../../fonts/iconfont.css" />
+</head>
+<script src="../../libs/bbdchart.min.js"></script>
+<body>
+<div class="box">
+    <div id="map"></div>
+    <div id="console">
+    </div>
+</div>
+</body>
+<script>
+    var bbdChart = new BBDChart();
+    bbdChart.init({
+        container: 'map',
+        type: 'rect',
+        config: {
+            nodeSize: 12,
+            nodesInterval: 60
+        }
+    });
+    var nodes = [
+        {
+            color: "#aec7e8",
+            fontColor: "#132637",
+            fontSize: 16,
+            icon: "&#xe650;",
+            id: "d3eacbfaf3d44183bdf51179c3c7681b|company",
+            label: "老李",
+            originLabel: "老李",
+            properties: {name: "老李", __uid__: "d3eacbfaf3d44183bdf51179c3c7681b|company", label: "company"},
+            size: 12,
+            x: 60,
+            y: 60
+        },
+        {
+            color: "#aec7e8",
+            fontColor: "#132637",
+            fontSize: 16,
+            icon: "&#xe650;",
+            id: "14de3360b0974b279e06212ab24b0023|company",
+            label: "小李",
+            originLabel: "小李",
+            properties: {name: "小李", __uid__: "14de3360b0974b279e06212ab24b0023|company", label: "company"},
+            size: 12,
+            x: 60,
+            y: 0
+        }
+    ];
+    var edges = [
+        {
+            color: "#d2dbe1",
+            labelBgColor: "rgba(255,166,3,0.7)",
+            labelColor: "#333",
+            edgeLabelSize: 10,
+            id: "4b9fa9f4a7eb93c1aff389ece93fbe38_czgs|company|invest|company",
+            label: "父亲",
+            originLabel: "invest",
+            properties: {label: "invest"},
+            source: "d3eacbfaf3d44183bdf51179c3c7681b|company",
+            target: "14de3360b0974b279e06212ab24b0023|company"
+        },
+        {
+            color: "#d2dbe1",
+            labelColor: "#333",
+            edgeLabelSize: 10,
+            lineDash: [4, 1],
+            id: "5b9fa9f4a7eb93c1aff389ece93fbe38_czgs|company|invest|company",
+            label: "儿子",
+            originLabel: "invest",
+            properties: {label: "invest"},
+            target: "d3eacbfaf3d44183bdf51179c3c7681b|company",
+            source: "14de3360b0974b279e06212ab24b0023|company"
+        }
+    ];
+    bbdChart.graph.add({nodes: nodes, edges: edges});
+    bbdChart.drag();
+
+    var result = [];
+
+    var consoleBox = document.querySelector('#console');
+    bbdChart.on('nodeClick', function (data, e) {
+        if(result.length === 10) {
+            result = [];
+        }
+        result.push('<p>nodeClick</p>');
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+    bbdChart.on('nodeRightClick', function (data, e) {
+        if(result.length === 10) {
+            result = [];
+        }
+        result.push('<p>nodeRightClick</p>');
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+    bbdChart.on('edgeClick', function (data, e) {
+        if(result.length === 10) {
+            result = [];
+        }
+        result.push('<p>edgeClick</p>');
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+    bbdChart.on('edgeRightClick', function (data, e) {
+        if(result.length === 10) {
+            result = [];
+        }
+        result.push('<p>edgeRightClick</p>');
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+    bbdChart.on('stageRightClick', function (data, e) {
+        if(result.length === 10) {
+            result = [];
+        }
+        result.push('<p>stageRightClick</p>');
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+    bbdChart.on('stageClick', function (data, e) {
+        if(result.length === 10) {
+            result = [];
+        }
+        result.push('<p>stageClick</p>');
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+    bbdChart.on('mouseover', function (data, e) {
+        if(result.length === 10) {
+            result = [];
+        }
+        result.push('<p>mouseover</p>');
+
+        console.log('mouseover', data);
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+    bbdChart.on('mouseout', function (data, e) {
+        if(result.length === 5) {
+            result = [];
+        }
+        result.push('<p>mouseout</p>');
+
+        console.log('mouseout', data);
+        consoleBox.innerHTML = result.reduce(function (acc, v) {
+            return acc + v;
+        }, '');
+
+    });
+</script>
+</html>

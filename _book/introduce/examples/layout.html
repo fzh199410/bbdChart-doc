@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout布局</title>
+    <link rel="stylesheet" href="../../fonts/iconfont.css" />
+    <style>
+        #map {
+            width: 750px;
+            height: 750px;
+            position: relative;
+            box-sizing: border-box;
+            background: #ddd;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="../../libs/jquery-2.1.1.js"></script>
+    <script src="../../libs/klgraph.js"></script>
+    <script src="../../libs/bbdchart.min.js"></script>
+</head>
+<body>
+<select value="rect" id="chartType">
+    <option value="rect">rect</option>
+    <option value="circle">circle</option>
+    <option value="tree">tree</option>
+    <option value="spiral">spiral</option>
+    <option value="loop">loop</option>
+</select>
+<div id="map"></div>
+</body>
+<script>
+    var bbdChart = new BBDChart();
+    bbdChart.init({
+        container: 'map',
+        type: 'rect',
+        config: {
+            nodeSize: 12,
+            nodesInterval: 60
+        }
+    });
+    bbdChart.drag();
+    $.get('./data3.json', function (res) {
+        var nl = [];
+        res.nodes.map(function (d) {
+            nl.push(d.properties.label);
+            d.icon = '&#xe619;';
+            d.size = 10 ;
+            return d;
+        });
+
+        res.links.map(function (d, index) {
+            d.arrow = {
+                size: 'small',
+                color: '#000'
+            };
+            d.text = {
+                name: '',
+                // name: d.source + '_' + d.target,
+                style: {
+                    textFill: '#666',
+                    fontSize: 10
+                }
+            }
+            d.style = {
+                lineWidth: 0.5, // 线条粗细
+                stroke: '#666'
+            }
+            return d;
+        });
+        bbdChart.graph.add({nodes: res.nodes, edges: res.links});
+
+    });
+    $('#chartType').on('change', function () {
+        bbdChart.setChart($(this).val());
+    })
+</script>
+</html>

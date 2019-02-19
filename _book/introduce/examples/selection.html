@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edge边</title>
+    <style>
+        #map {
+            width: 750px;
+            height: 300px;
+            position: relative;
+            box-sizing: border-box;
+            background: #ddd;
+            margin-top: 10px;
+        }
+        span {
+            cursor: pointer;
+            font-weight: bold;
+            background: #78a7ff;
+            color: #fff;
+            display: inline-block;
+            padding: 2px 8px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="../../fonts/iconfont.css" />
+</head>
+<script src="../../libs/jquery-2.1.1.js"></script>
+<script src="../../libs/bbdchart.min.js"></script>
+<body>
+<span id="brush">auto选择</span>
+<span id="brush2">rect选择</span>
+<span id="brush3">circle选择</span>
+<div id="map"></div>
+</body>
+<script>
+    var bbdChart = new BBDChart();
+    bbdChart.init({
+        container: 'map',
+        type: 'rect',
+        config: {
+            nodeSize: 12,
+            nodesInterval: 60
+        }
+    });
+    var nodes = [
+        {
+            color: "#aec7e8",
+            fontColor: "#132637",
+            fontSize: 16,
+            icon: "&#xe650;",
+            id: "d3eacbfaf3d44183bdf51179c3c7681b|company",
+            label: "老李",
+            originLabel: "老李",
+            properties: {name: "老李", __uid__: "d3eacbfaf3d44183bdf51179c3c7681b|company", label: "company"},
+            size: 12,
+            x: 30,
+            y: 30
+        },
+        {
+            color: "#aec7e8",
+            fontColor: "#132637",
+            fontSize: 16,
+            icon: "&#xe650;",
+            id: "14de3360b0974b279e06212ab24b0023|company",
+            label: "小李",
+            originLabel: "小李",
+            properties: {name: "小李", __uid__: "14de3360b0974b279e06212ab24b0023|company", label: "company"},
+            size: 12,
+            x: 30,
+            y: 0
+        }
+    ];
+    var edges = [
+        {
+            color: "#d2dbe1",
+            labelBgColor: "rgba(255,166,3,0.7)",
+            labelColor: "#333",
+            edgeLabelSize: 10,
+            id: "4b9fa9f4a7eb93c1aff389ece93fbe38_czgs|company|invest|company",
+            label: "父亲",
+            originLabel: "invest",
+            properties: {label: "invest"},
+            source: "d3eacbfaf3d44183bdf51179c3c7681b|company",
+            target: "14de3360b0974b279e06212ab24b0023|company"
+        },
+        {
+            color: "#d2dbe1",
+            labelColor: "#333",
+            edgeLabelSize: 10,
+            lineDash: [4, 1],
+            id: "5b9fa9f4a7eb93c1aff389ece93fbe38_czgs|company|invest|company",
+            label: "儿子",
+            originLabel: "invest",
+            properties: {label: "invest"},
+            target: "d3eacbfaf3d44183bdf51179c3c7681b|company",
+            source: "14de3360b0974b279e06212ab24b0023|company"
+        }
+    ];
+    bbdChart.graph.add({nodes: nodes, edges: edges});
+    bbdChart.drag();
+    bbdChart.on('nodeRightClick', function (data, e) {
+
+        if(!bbdChart.selection.isNodeSelected(data.id)) {
+            bbdChart.selection.selectNodes(data.id, e.shiftKey);
+        }
+
+        bbdChart.selection.selectEdges();
+    });
+
+    bbdChart.on('edgeRightClick', function (data, e) {
+
+        bbdChart.selection.selectEdges(data.id, e.shiftKey);
+        bbdChart.selection.selectNodes();
+
+    });
+
+    bbdChart.on('nodeClick', function (data, e) {
+        if(!e.shiftKey) {
+            bbdChart.selection.unSelectEdges();
+        }
+        if(!bbdChart.selection.isNodeSelected(data.id)) {
+            bbdChart.selection.selectNodes(data.id, e.shiftKey);
+        }else {
+            if(e.shiftKey) {
+                bbdChart.selection.unSelectNodes(data.id);
+            }else {
+                bbdChart.selection.selectNodes(data.id);
+            }
+        }
+    });
+
+    bbdChart.on('edgeClick', function (data, e) {
+        if(!e.shiftKey) {
+            bbdChart.selection.unSelectNodes();
+        }
+
+        if(!bbdChart.selection.isEdgeSelected(data.id)) {
+            bbdChart.selection.selectEdges(data.id, e.shiftKey);
+        }else {
+            if(e.shiftKey) {
+                bbdChart.selection.unSelectNodes(data.id);
+            }else {
+                bbdChart.selection.selectEdges(data.id);
+            }
+        }
+    });
+
+    bbdChart.on('stageRightClick', function (e) {
+        // todo
+    });
+    bbdChart.on('stageClick', function (e) {
+        bbdChart.selection.unSelectNodes();
+        bbdChart.selection.unSelectEdges();
+    });
+
+    $('#brush').on('click', function () {
+        bbdChart.brush('auto', function (data) {
+            console.log(data);
+        });
+    });
+
+    $('#brush2').on('click', function () {
+        bbdChart.brush('rect', function (data) {
+            console.log(data);
+        });
+    });
+    $('#brush3').on('click', function () {
+        bbdChart.brush('circle', function (data) {
+            console.log(data);
+        });
+    });
+</script>
+</html>
