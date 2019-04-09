@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>node节点</title>
+    <title>历史记录</title>
     <style>
         #map {
             width: 750px;
@@ -18,8 +18,8 @@
 <script src="../../libs/bbdchart.min.js"></script>
 <body>
 <div>
-    <button id="addNode">添加点</button>
-    <button id="delNode">删除点</button>
+    <button id="add">添加</button>
+    <button id="del">删除</button>
     <button id="recall">撤回</button>
     <button id="unRecall">反撤回</button>
 </div>
@@ -76,37 +76,10 @@
             y: 0
         }
     ];
-
-    var edges = [
-        {
-            color: "#d2dbe1",
-            labelBgColor: "rgba(255,166,3,0.7)",
-            labelColor: "#333",
-            edgeLabelSize: 10,
-            id: "4b9fa9f4a7eb93c1aff389ece93fbe38_czgs|company|invest|company",
-            label: "父亲",
-            originLabel: "invest",
-            properties: {label: "invest"},
-            source: "d3eacbfaf3d44183bdf51179c3c7681b|company",
-            target: "14de3360b0974b279e06212ab24b0023|company"
-        },
-        {
-            color: "#d2dbe1",
-            labelColor: "#333",
-            edgeLabelSize: 10,
-            lineDash: [4, 1],
-            id: "5b9fa9f4a7eb93c1aff389ece93fbe38_czgs|company|invest|company",
-            label: "儿子",
-            originLabel: "invest",
-            properties: {label: "invest"},
-            target: "d3eacbfaf3d44183bdf51179c3c7681b|company",
-            source: "14de3360b0974b279e06212ab24b0023|company"
-        }
-    ];
-    bbdChart.graph.add({nodes: nodes, edges: edges});
+    bbdChart.graph.addNode(nodes);
     bbdChart.drag();
 
-    document.querySelector('#addNode').addEventListener('click', function () {
+    document.querySelector('#add').addEventListener('click', function () {
         bbdChart.graph.addNode({
             color: "#aec7e8",
             fontColor: "#132637",
@@ -121,7 +94,7 @@
         });
     });
 
-    document.querySelector('#delNode').addEventListener('click', function () {
+    document.querySelector('#del').addEventListener('click', function () {
         var nodeId = bbdChart.graph.nodes.map(function (v) {
             return v.id;
         });
@@ -129,12 +102,15 @@
     })
 
     document.querySelector('#recall').addEventListener('click', function () {
+
         bbdChart.graph.historyMachine.chartRecall();
 
-    })
+    });
 
     document.querySelector('#unRecall').addEventListener('click', function () {
+
         bbdChart.graph.historyMachine.chartUnRecall();
-    })
+
+    });
 </script>
 </html>
